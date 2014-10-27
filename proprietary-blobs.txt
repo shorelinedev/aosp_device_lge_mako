@@ -165,6 +165,7 @@
 /system/vendor/firmware/dsps.b04
 /system/vendor/firmware/dsps.b05
 /system/vendor/firmware/dsps.mdt
+/system/vendor/firmware/libpn544_fw.so
 /system/vendor/firmware/keymaster/keymaster.b00
 /system/vendor/firmware/keymaster/keymaster.b01
 /system/vendor/firmware/keymaster/keymaster.b02
