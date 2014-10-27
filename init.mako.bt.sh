@@ -4,6 +4,13 @@ BLUETOOTH_SLEEP_PATH=/proc/bluetooth/sleep/proto
 LOG_TAG="mako-bluetooth"
 LOG_NAME="${0}:"
 
+#Tool to program bt address in Optimus G
+program_bdaddr ()
+{
+  /system/bin/btnvtool -O
+  logi "Bluetooth Address programmed successfully"
+}
+
 loge ()
 {
   /system/bin/log -t $LOG_TAG -p e "$LOG_NAME $@"
@@ -57,8 +64,11 @@ esac
 
 if [$BDADDR == ""]
 then
+logi "/system/bin/bdAddrLoader could not obtain bluetooth address. Using /system/bin/btnvtool"
+program_bdaddr
 /system/bin/hci_qcomm_init -e $PWR_CLASS -vv
 else
+logi "/system/bin/bdAddrLoader successfully obtained bluetooth address: $BDADDR"
 /system/bin/hci_qcomm_init -b $BDADDR -e $PWR_CLASS -vv
 fi
 
