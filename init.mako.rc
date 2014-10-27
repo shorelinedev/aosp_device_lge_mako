@@ -400,12 +400,22 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input
+    
+service conn_pre_init /system/bin/sh /system/etc/init.mako.wlan.sh
+    class late_start
+    user root
+    group system
+    oneshot
 
 service conn_init /system/bin/conn_init
     class late_start
     user system
     group system wifi
+    disabled
     oneshot
+    
+on property:wlan.conn_init=on
+    start conn_init
 
 service bdAddrLoader /system/bin/bdAddrLoader -f /persist/bluetooth/.bdaddr -h -x
     class main
