@@ -201,6 +201,12 @@ on post-fs-data
 
     # LED On/Off synchronization
     chown system system /sys/class/leds/red/device/lock
+    
+    # E970 leds owner should be system
+    chown system system /sys/class/leds/led:red/brightness
+    chown system system /sys/class/leds/led:red/trigger
+    chown system system /sys/class/leds/button-backlight/brightness
+    chown system system /sys/class/leds/button-backlight/trigger
 
     # communicate with mpdecision and thermald
     mkdir /dev/socket/mpdecision 2770 root system
