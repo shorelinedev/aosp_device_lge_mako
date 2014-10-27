@@ -134,4 +134,4 @@ HAVE_ADRENO_SOURCE:= false
 
 MALLOC_IMPL := dlmalloc
 
--include vendor/lge/mako/BoardConfigVendor.mk
+-include vendor/lge/geeb/BoardConfigVendor.mk
