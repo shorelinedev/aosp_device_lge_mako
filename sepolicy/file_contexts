@@ -6,6 +6,7 @@
 /dev/msm_rotator    u:object_r:video_device:s0
 
 # Qualcomm Secure Execution Environment Communicator (QSEECOM) device
+/dev/pn544          u:object_r:nfc_device:s0
 /dev/qseecom        u:object_r:tee_device:s0
 
 # Qualcomm MSM Interface (QMI) devices
